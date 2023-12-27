@@ -119,9 +119,6 @@ export default function Home() {
               <h2 className='font-semibold text-xl tracking-wide'>
                 OOPS! No Cars Available
               </h2>
-              <p>
-                {allCars?.message}
-              </p>
             </div>
           )}
         </div>
