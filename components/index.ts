@@ -8,6 +8,7 @@ import SearchByMaker from "./SearchByMaker";
 import CarCard from "./CarCard";
 import CarDetails from "./CarDetails";
 import ShowMore from "./ShowMore";
+import Loader from "./Loader";
 
 export {
   Hero,
@@ -20,5 +21,5 @@ export {
   CarCard,
   CarDetails,
   ShowMore,
-  
+  Loader
 };

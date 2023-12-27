@@ -1,6 +1,6 @@
 "use client";
 
-import { CarCard, CustomFilter, Hero, SearchBar, ShowMore } from "@/components";
+import { CarCard, CustomFilter, Hero, Loader, SearchBar, ShowMore } from "@/components";
 import { getCar } from '@/utils';
 import { fuels, yearsOfProduction } from '@/constants';
 import Link from 'next/link';
@@ -9,6 +9,8 @@ import Image from "next/image";
 
 export default function Home() {
   const currentYear = new Date().getFullYear();
+  const [isLoading, setIsLoading] = useState(true);
+  const [isFadingIn, setIsFadingIn] = useState(false);
   const catalogRef = useRef(null);
 
   const [allCars, setAllCars] = useState([]);
@@ -46,79 +48,84 @@ export default function Home() {
 
   const allCarsResult = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
 
-  return (
-    <main className="overflow-hidden">
-      <Hero catalogRef={catalogRef} />
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+      setIsFadingIn(true);
+    }, 2000); // replace 2000 with the actual loading time
 
-      <div className="mt-12 padding-x padding-y max-width" ref={catalogRef} id='catalog'>
-        <div className="home__text-container">
-          <h1 className="text-4xl font-extrabold">
-            Car Catalog
-          </h1>
-          <p>Explore the Best cars</p>
-          <Link href={'/'}>
-            View Our Collection
-          </Link>
-        </div>
+    return () => clearTimeout(timer);
+  }, []);
 
-        <div className="home__filters">
-          <SearchBar
-            setMaker={setMaker}
-            setModel={setModel}
-          />
+  if (isLoading) {
+    return <Loader />;
+  }
 
-          <div className="home__filter-container">
-            <CustomFilter title='fuel' options={fuels} setFilter={setFuel} />
-            <CustomFilter title='year' options={yearsOfProduction} setFilter={setYear} />
+  // if (isLoading) {
+    return (
+      <main className={`overflow-hidden ${isFadingIn ? 'fade-in' : ''}`}>
+        <Hero catalogRef={catalogRef} />
+
+        <div className="mt-12 padding-x padding-y max-width" ref={catalogRef} id='catalog'>
+          <div className="home__text-container">
+            <h1 className="text-4xl font-extrabold">
+              Car Catalog
+            </h1>
+            <p>Explore the Best cars</p>
           </div>
-        </div>
 
+          <div className="home__filters">
+            <SearchBar
+              setMaker={setMaker}
+              setModel={setModel}
+            />
 
-        {allCars.length > 0 ? (
-          <section>
-            <div className='home__error-container'>
-              {maker && <h2 className='font-semibold text-xl tracking-wide'>Showing Results for "{maker.toLocaleUpperCase()} {model.toLocaleUpperCase()}"</h2>
-                ||
-                <h2 className='font-semibold text-xl tracking-wide'> Showing the Best Cars in Our Collection</h2>
-              }
-
-              <div className="home__cars-wrapper">
-                {allCars?.map((car) => (
-                  <CarCard car={car} />
-                ))}
-              </div>
-
-              {loading &&
-                <div className="mt-16 w-full flex-center">
-                  <Image
-                    src='/loader.svg'
-                    alt='loader'
-                    width={100}
-                    height={100}
-                    className='object-contain'
-                  />
-                </div>
-              }
-
-              <ShowMore
-                pageNumber={limit / 10}
-                isNext={limit > allCars.length}
-                setLimit={setLimit}
-              />
-
+            <div className="home__filter-container">
+              <CustomFilter title='fuel' options={fuels} setFilter={setFuel} />
+              <CustomFilter title='year' options={yearsOfProduction} setFilter={setYear} />
             </div>
-          </section>
-        ) : (
-          <div>
-            <h2>
-              OOPS! No Cars Available
-            </h2>
-            <p>
-              {allCars?.message}
-            </p>
           </div>
-        )}
-      </div>
-    </main>
-  )
-}
+
+
+          {allCars.length > 0 ? (
+            <section>
+              <div className='home__error-container'>
+                {maker && <h2 className='font-semibold text-xl tracking-wide'>Showing Results for "{maker.toLocaleUpperCase()} {model.toLocaleUpperCase()}"</h2>
+                  ||
+                  <h2 className='font-semibold text-xl tracking-wide'> Showing the Best Cars in Our Collection</h2>
+                }
+
+                <div className="home__cars-wrapper">
+                  {allCars?.map((car) => (
+                    <CarCard car={car} />
+                  ))}
+                </div>
+
+                {loading &&
+                  <div className="loader mt-10">
+                  </div>
+                }
+
+                <ShowMore
+                  pageNumber={limit / 10}
+                  isNext={limit > allCars.length}
+                  setLimit={setLimit}
+                />
+
+              </div>
+            </section>
+          ) : (
+            <div className="home__error-container">
+              <h2 className='font-semibold text-xl tracking-wide'>
+                OOPS! No Cars Available
+              </h2>
+              <p>
+                {allCars?.message}
+              </p>
+            </div>
+          )}
+        </div>
+      </main>
+    )
+  }
+// }
