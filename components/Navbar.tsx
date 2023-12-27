@@ -9,7 +9,7 @@ const Navbar = () => {
       < nav className='max-w-[1440px] mx-auto flex items-center justify-between sm:px-16 px-6 py-4' >
         <Link href={'/'} className='justify-center items-center'>
           <Image 
-          src={'/logo.svg'}
+          src={'/Logo-dark.png'}
           alt='Log'
           width={118}
           height={18}

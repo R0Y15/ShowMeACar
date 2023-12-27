@@ -6,7 +6,7 @@ import React, { useState, Fragment } from 'react';
 import Image from 'next/image';
 import { makers } from '@/constants';
 
-const SearchByMaker = ({ maker, setMaker }: searchByMakerProps) => {
+const SearchByMaker = ({ selected, setSelected }: searchByMakerProps) => {
   const [query, setQuery] = useState('second');
 
   const filteredMakers =
@@ -18,7 +18,7 @@ const SearchByMaker = ({ maker, setMaker }: searchByMakerProps) => {
 
   return (
     <div className='search-maker'>
-      <Combobox value={maker} onChange={setMaker}>
+      <Combobox value={selected} onChange={setSelected}>
         <div className="relative w-full" >
           <Combobox.Button className={'absolute top-[14px]'} >
             <Image

@@ -3,8 +3,10 @@
 import Image from "next/image";
 import { CustomButton } from ".";
 
-const hero = () => {
-  const handelScrollToSection = () => { };
+const hero = ({ catalogRef }) => {
+  const handelScrollToSection = () => {
+    catalogRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <div className="hero">

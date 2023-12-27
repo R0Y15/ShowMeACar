@@ -9,8 +9,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Manrope", sans-serif;
-  /* background-color: rgb(31, 31, 31);
-  color: #fff; */
 }
 
 /* START: General styles */
@@ -37,6 +35,7 @@
 .custom-btn {
   @apply flex flex-row relative justify-center items-center py-3 px-6 outline-none;
 }
+
 /* END: General styles */
 
 /* START: Hero styles */
@@ -57,12 +56,15 @@
 }
 
 .hero__image {
-  @apply relative xl:w-full w-[90%] xl:h-full h-[590px] z-0;
+  @apply relative xl:w-full w-[90%] xl:h-full  z-0;
 }
 
 .hero__image-overlay {
-  @apply absolute xl:-top-24 xl:-right-1/2 -right-1/4 bg-hero-bg bg-repeat-round -z-10 w-full xl:h-screen h-[590px] overflow-hidden;
+  @apply absolute xl:-top-24 xl:-right-1/2 -right-1/4 bg-hero-bg bg-no-repeat -z-10 w-[170vh] h-[110vh] overflow-hidden;
+  background: rgb(0, 8, 86);
+  background: linear-gradient(269deg, rgba(0, 8, 86, 1) 0%, rgba(0, 10, 110, 1) 43%, rgba(51, 62, 175, 0.8169642857142857) 74%, rgba(104, 112, 184, 0.6376925770308124) 83%, rgba(220, 223, 252, 0.5788690476190477) 93%, rgba(229, 232, 255, 0) 100%);
 }
+
 /* END: Hero styles */
 
 /* START: Home styles */
@@ -86,6 +88,7 @@
 .home__error-container {
   @apply mt-16 flex justify-center items-center flex-col gap-2;
 }
+
 /* END: Home styles */
 
 /* START: Car Card styles */
@@ -132,6 +135,7 @@
 .car-card__btn-container {
   @apply hidden group-hover:flex absolute bottom-0 w-full z-10;
 }
+
 /* END: Car Card styles */
 
 /* START: Car Details styles */
@@ -146,6 +150,7 @@
 .car-details__main-image {
   @apply relative w-full h-40 bg-pattern bg-cover bg-center rounded-lg;
 }
+
 /* END: Car Details styles */
 
 /* START: Custom Filter styles */
@@ -156,11 +161,12 @@
 .custom-filter__options {
   @apply absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm;
 }
+
 /* END: Custom Filter styles */
 
 /* START: Footer styles */
 .footer {
-  @apply flex flex-col text-black-100  mt-5 border-t border-gray-100;
+  @apply flex flex-col text-black-100 mt-5 border-t border-gray-100;
 }
 
 .footer__links-container {
@@ -186,6 +192,7 @@
 .footer__copyrights-link {
   @apply flex-1 flex sm:justify-end justify-center max-sm:mt-4 gap-10;
 }
+
 /* END: Footer styles */
 
 /* START: searchbar styles */
@@ -200,6 +207,7 @@
 .searchbar__input {
   @apply w-full h-[48px] pl-12 p-4 bg-light-white rounded-r-full max-sm:rounded-full outline-none cursor-pointer text-sm;
 }
+
 /* END: searchbar styles */
 
 /* START: search manufacturer styles */
@@ -218,4 +226,5 @@
 .search-maker__option {
   @apply cursor-default select-none py-2 pl-10 pr-4;
 }
+
 /* END: search manufacturer styles */
