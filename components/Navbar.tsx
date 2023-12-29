@@ -10,7 +10,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsSmallScreen(window.innerWidth >= 1025); // replace 768 with your breakpoint
+      setIsSmallScreen(window.innerWidth >= 1025); 
     };
 
     checkScreenSize();

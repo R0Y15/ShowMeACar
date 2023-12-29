@@ -20,7 +20,7 @@ export default function Home() {
   const [model, setModel] = useState('');
 
   const [fuel, setFuel] = useState('');
-  const [year, setYear] = useState(2022);
+  const [year, setYear] = useState(currentYear);
   const [limit, setLimit] = useState(10);
 
   const getCars = async () => {

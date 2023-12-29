@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Shopperz
 
-## Getting Started
+### All new shopping experience, A fresh take on online shopping and experience the difference.
 
-First, run the development server:
+This Site was developed using Next.js, Sanity.io, stripe and EmailJS. This is a fully functional e-commerce site with a contact form and a cart system. The site is fully responsive and has a great user experience. The site is deployed on Vercel. For a hands-on experience, you can visit the site using the link below.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Link to Site: https://shopperz-sigma.vercel.app
+
+<p align='center'>
+    <img src="https://i.ibb.co/sKYCkZJ/mockuper-1.png" />
+</p>
+
+## Built Using
+- Next.js
+- Typescript
+- Tailwind CSS
+
+## Full Page
+<p align='center'>
+    <img src="https://i.postimg.cc/V6XtBYW6/screencapture-localhost-3000-2023-12-29-21-26-51.png" />
+</p>
+
+## Installation
+
+1. Clone the repository.
 ```
+git clone
+```
+2. Install the dependencies using
+```
+npm install
+```
+3. Create a `.env` file in the root directory of the project and add the following environment variables. also please note that the emailJs environment variables are optional and only required if you want to use the contact form.
+```
+# Imagin Studio 
+NEXT_PUBLIC_IMAGIN_STUDIO_CUSTOMER_ID = '<Your_Imagin_Studio_API_Key>'
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Rapid API
+NEXT_PUBLIC_RAPID_API_KEY = '<Your_Rapid_API_Key>'
+```
+4. Run the application using
+```
+npm run dev
+```
+5. Open your browser and navigate to `http://localhost:3000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## License
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is licensed under the [MIT License](LICENSE).
