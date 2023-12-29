@@ -1,10 +1,10 @@
 # Shopperz
 
-### All new shopping experience, A fresh take on online shopping and experience the difference.
+### An Elegant Car Rental Website
 
-This Site was developed using Next.js, Sanity.io, stripe and EmailJS. This is a fully functional e-commerce site with a contact form and a cart system. The site is fully responsive and has a great user experience. The site is deployed on Vercel. For a hands-on experience, you can visit the site using the link below.
+This is a car rental website built using Next.js, Typescript and Tailwind CSS. It uses the Imagin Studio API to fetch the car Image data and Rapid API to fetch car details data.  
 
-Link to Site: https://shopperz-sigma.vercel.app
+Link to Site: https://show-me-a-car.vercel.app
 
 <p align='center'>
     <img src="https://i.ibb.co/sKYCkZJ/mockuper-1.png" />
@@ -16,7 +16,7 @@ Link to Site: https://shopperz-sigma.vercel.app
 - Tailwind CSS
 
 ## Full Page
-<p align='center' width='100%'>
+<p align='center'>
     <img src="https://i.postimg.cc/V6XtBYW6/screencapture-localhost-3000-2023-12-29-21-26-51.png" />
 </p>
 
