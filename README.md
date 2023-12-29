@@ -16,7 +16,7 @@ Link to Site: https://shopperz-sigma.vercel.app
 - Tailwind CSS
 
 ## Full Page
-<p align='center'>
+<p align='center' width='100%'>
     <img src="https://i.postimg.cc/V6XtBYW6/screencapture-localhost-3000-2023-12-29-21-26-51.png" />
 </p>
 
